@@ -109,13 +109,6 @@
 			);
 			target = C29901DE2D56400E001C3E4F /* HexWatchApp Watch App */;
 		};
-		ED606F522D5663C000F2EF40 /* Exceptions for "HexWatchApp Watch App" folder in "HexWatchApp Watch App" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				"HexWatchApp-Watch-App-Info.plist",
-			);
-			target = C29901DE2D56400E001C3E4F /* HexWatchApp Watch App */;
-		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -139,9 +132,6 @@
 		};
 		C29901E02D56400E001C3E4F /* HexWatchApp Watch App */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				ED606F522D5663C000F2EF40 /* Exceptions for "HexWatchApp Watch App" folder in "HexWatchApp Watch App" target */,
-			);
 			path = "HexWatchApp Watch App";
 			sourceTree = "<group>";
 		};
@@ -939,7 +929,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 11.2;
+				WATCHOS_DEPLOYMENT_TARGET = 9.6;
 			};
 			name = Debug;
 		};
@@ -975,7 +965,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 11.2;
+				WATCHOS_DEPLOYMENT_TARGET = 9.6;
 			};
 			name = Release;
 		};
