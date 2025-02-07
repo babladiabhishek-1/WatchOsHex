@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C21E2D4F2D5676120055C9B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C21E2D4E2D5676120055C9B0 /* GoogleService-Info.plist */; };
-		C21E2D502D5676120055C9B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C21E2D4E2D5676120055C9B0 /* GoogleService-Info.plist */; };
+		C210B2BE2D568A1F00D32EC1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C210B2BD2D568A1F00D32EC1 /* GoogleService-Info.plist */; };
+		C210B2BF2D568A1F00D32EC1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C210B2BD2D568A1F00D32EC1 /* GoogleService-Info.plist */; };
 		C274B31E2D564E06005591F8 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = C274B31D2D564E06005591F8 /* FirebaseAnalytics */; };
 		C274B3202D564E06005591F8 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = C274B31F2D564E06005591F8 /* FirebaseAnalyticsOnDeviceConversion */; };
 		C274B3222D564E06005591F8 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = C274B3212D564E06005591F8 /* FirebaseAnalyticsWithoutAdIdSupport */; };
@@ -92,7 +92,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		C21E2D4E2D5676120055C9B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C210B2BD2D568A1F00D32EC1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C279DB5F2D5639CB00B6B3DC /* HEXWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HEXWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C279DB722D5639CC00B6B3DC /* HEXWatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HEXWatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C279DB7C2D5639CC00B6B3DC /* HEXWatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HEXWatchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -223,7 +223,7 @@
 		C274B34D2D564E99005591F8 /* Google info plist */ = {
 			isa = PBXGroup;
 			children = (
-				C21E2D4E2D5676120055C9B0 /* GoogleService-Info.plist */,
+				C210B2BD2D568A1F00D32EC1 /* GoogleService-Info.plist */,
 			);
 			path = "Google info plist";
 			sourceTree = "<group>";
@@ -498,7 +498,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C21E2D502D5676120055C9B0 /* GoogleService-Info.plist in Resources */,
+				C210B2BE2D568A1F00D32EC1 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,7 +520,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C21E2D4F2D5676120055C9B0 /* GoogleService-Info.plist in Resources */,
+				C210B2BF2D568A1F00D32EC1 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -929,7 +929,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 9.6;
+				WATCHOS_DEPLOYMENT_TARGET = 10.6;
 			};
 			name = Debug;
 		};
@@ -965,7 +965,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 9.6;
+				WATCHOS_DEPLOYMENT_TARGET = 10.6;
 			};
 			name = Release;
 		};
