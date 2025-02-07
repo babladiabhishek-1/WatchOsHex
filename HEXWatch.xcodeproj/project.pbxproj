@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		C29902022D56400F001C3E4F /* HexWatchApp Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = C29901DF2D56400E001C3E4F /* HexWatchApp Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		C279DB732D5639CC00B6B3DC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -21,12 +25,50 @@
 			remoteGlobalIDString = C279DB5E2D5639CB00B6B3DC;
 			remoteInfo = HEXWatch;
 		};
+		C29901EF2D56400F001C3E4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C279DB572D5639CB00B6B3DC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C29901DE2D56400E001C3E4F;
+			remoteInfo = "HexWatchApp Watch App";
+		};
+		C29901F92D56400F001C3E4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C279DB572D5639CB00B6B3DC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C29901DE2D56400E001C3E4F;
+			remoteInfo = "HexWatchApp Watch App";
+		};
+		C29902002D56400F001C3E4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C279DB572D5639CB00B6B3DC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C29901DE2D56400E001C3E4F;
+			remoteInfo = "HexWatchApp Watch App";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C29902032D56400F001C3E4F /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				C29902022D56400F001C3E4F /* HexWatchApp Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		C279DB5F2D5639CB00B6B3DC /* HEXWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HEXWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C279DB722D5639CC00B6B3DC /* HEXWatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HEXWatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C279DB7C2D5639CC00B6B3DC /* HEXWatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HEXWatchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C29901DF2D56400E001C3E4F /* HexWatchApp Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HexWatchApp Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C29901EE2D56400F001C3E4F /* HexWatchApp Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HexWatchApp Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C29901F82D56400F001C3E4F /* HexWatchApp Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HexWatchApp Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -43,6 +85,21 @@
 		C279DB7F2D5639CC00B6B3DC /* HEXWatchUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = HEXWatchUITests;
+			sourceTree = "<group>";
+		};
+		C29901E02D56400E001C3E4F /* HexWatchApp Watch App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "HexWatchApp Watch App";
+			sourceTree = "<group>";
+		};
+		C29901F12D56400F001C3E4F /* HexWatchApp Watch AppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "HexWatchApp Watch AppTests";
+			sourceTree = "<group>";
+		};
+		C29901FB2D56400F001C3E4F /* HexWatchApp Watch AppUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "HexWatchApp Watch AppUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -69,6 +126,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C29901DC2D56400E001C3E4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C29901EB2D56400F001C3E4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C29901F52D56400F001C3E4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -78,6 +156,9 @@
 				C279DB612D5639CB00B6B3DC /* HEXWatch */,
 				C279DB752D5639CC00B6B3DC /* HEXWatchTests */,
 				C279DB7F2D5639CC00B6B3DC /* HEXWatchUITests */,
+				C29901E02D56400E001C3E4F /* HexWatchApp Watch App */,
+				C29901F12D56400F001C3E4F /* HexWatchApp Watch AppTests */,
+				C29901FB2D56400F001C3E4F /* HexWatchApp Watch AppUITests */,
 				C279DB602D5639CB00B6B3DC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,6 +169,9 @@
 				C279DB5F2D5639CB00B6B3DC /* HEXWatch.app */,
 				C279DB722D5639CC00B6B3DC /* HEXWatchTests.xctest */,
 				C279DB7C2D5639CC00B6B3DC /* HEXWatchUITests.xctest */,
+				C29901DF2D56400E001C3E4F /* HexWatchApp Watch App.app */,
+				C29901EE2D56400F001C3E4F /* HexWatchApp Watch AppTests.xctest */,
+				C29901F82D56400F001C3E4F /* HexWatchApp Watch AppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -102,10 +186,12 @@
 				C279DB5B2D5639CB00B6B3DC /* Sources */,
 				C279DB5C2D5639CB00B6B3DC /* Frameworks */,
 				C279DB5D2D5639CB00B6B3DC /* Resources */,
+				C29902032D56400F001C3E4F /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C29902012D56400F001C3E4F /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				C279DB612D5639CB00B6B3DC /* HEXWatch */,
@@ -163,6 +249,74 @@
 			productReference = C279DB7C2D5639CC00B6B3DC /* HEXWatchUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		C29901DE2D56400E001C3E4F /* HexWatchApp Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C299020A2D56400F001C3E4F /* Build configuration list for PBXNativeTarget "HexWatchApp Watch App" */;
+			buildPhases = (
+				C29901DB2D56400E001C3E4F /* Sources */,
+				C29901DC2D56400E001C3E4F /* Frameworks */,
+				C29901DD2D56400E001C3E4F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				C29901E02D56400E001C3E4F /* HexWatchApp Watch App */,
+			);
+			name = "HexWatchApp Watch App";
+			packageProductDependencies = (
+			);
+			productName = "HexWatchApp Watch App";
+			productReference = C29901DF2D56400E001C3E4F /* HexWatchApp Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C29901ED2D56400F001C3E4F /* HexWatchApp Watch AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C299020B2D56400F001C3E4F /* Build configuration list for PBXNativeTarget "HexWatchApp Watch AppTests" */;
+			buildPhases = (
+				C29901EA2D56400F001C3E4F /* Sources */,
+				C29901EB2D56400F001C3E4F /* Frameworks */,
+				C29901EC2D56400F001C3E4F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C29901F02D56400F001C3E4F /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				C29901F12D56400F001C3E4F /* HexWatchApp Watch AppTests */,
+			);
+			name = "HexWatchApp Watch AppTests";
+			packageProductDependencies = (
+			);
+			productName = "HexWatchApp Watch AppTests";
+			productReference = C29901EE2D56400F001C3E4F /* HexWatchApp Watch AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C29901F72D56400F001C3E4F /* HexWatchApp Watch AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C299020C2D56400F001C3E4F /* Build configuration list for PBXNativeTarget "HexWatchApp Watch AppUITests" */;
+			buildPhases = (
+				C29901F42D56400F001C3E4F /* Sources */,
+				C29901F52D56400F001C3E4F /* Frameworks */,
+				C29901F62D56400F001C3E4F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C29901FA2D56400F001C3E4F /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				C29901FB2D56400F001C3E4F /* HexWatchApp Watch AppUITests */,
+			);
+			name = "HexWatchApp Watch AppUITests";
+			packageProductDependencies = (
+			);
+			productName = "HexWatchApp Watch AppUITests";
+			productReference = C29901F82D56400F001C3E4F /* HexWatchApp Watch AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -184,6 +338,17 @@
 						CreatedOnToolsVersion = 16.2;
 						TestTargetID = C279DB5E2D5639CB00B6B3DC;
 					};
+					C29901DE2D56400E001C3E4F = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					C29901ED2D56400F001C3E4F = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = C29901DE2D56400E001C3E4F;
+					};
+					C29901F72D56400F001C3E4F = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = C29901DE2D56400E001C3E4F;
+					};
 				};
 			};
 			buildConfigurationList = C279DB5A2D5639CB00B6B3DC /* Build configuration list for PBXProject "HEXWatch" */;
@@ -203,6 +368,9 @@
 				C279DB5E2D5639CB00B6B3DC /* HEXWatch */,
 				C279DB712D5639CC00B6B3DC /* HEXWatchTests */,
 				C279DB7B2D5639CC00B6B3DC /* HEXWatchUITests */,
+				C29901DE2D56400E001C3E4F /* HexWatchApp Watch App */,
+				C29901ED2D56400F001C3E4F /* HexWatchApp Watch AppTests */,
+				C29901F72D56400F001C3E4F /* HexWatchApp Watch AppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -223,6 +391,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		C279DB7A2D5639CC00B6B3DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C29901DD2D56400E001C3E4F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C29901EC2D56400F001C3E4F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C29901F62D56400F001C3E4F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -253,6 +442,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C29901DB2D56400E001C3E4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C29901EA2D56400F001C3E4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C29901F42D56400F001C3E4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -265,6 +475,21 @@
 			isa = PBXTargetDependency;
 			target = C279DB5E2D5639CB00B6B3DC /* HEXWatch */;
 			targetProxy = C279DB7D2D5639CC00B6B3DC /* PBXContainerItemProxy */;
+		};
+		C29901F02D56400F001C3E4F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C29901DE2D56400E001C3E4F /* HexWatchApp Watch App */;
+			targetProxy = C29901EF2D56400F001C3E4F /* PBXContainerItemProxy */;
+		};
+		C29901FA2D56400F001C3E4F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C29901DE2D56400E001C3E4F /* HexWatchApp Watch App */;
+			targetProxy = C29901F92D56400F001C3E4F /* PBXContainerItemProxy */;
+		};
+		C29902012D56400F001C3E4F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C29901DE2D56400E001C3E4F /* HexWatchApp Watch App */;
+			targetProxy = C29902002D56400F001C3E4F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -551,6 +776,147 @@
 			};
 			name = Release;
 		};
+		C29902042D56400F001C3E4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HexWatchApp Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 9N8ZC32DMP;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = HexWatchApp;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.hexwatch.HEXWatch;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hexwatch.HEXWatch.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Debug;
+		};
+		C29902052D56400F001C3E4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HexWatchApp Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 9N8ZC32DMP;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = HexWatchApp;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.hexwatch.HEXWatch;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hexwatch.HEXWatch.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Release;
+		};
+		C29902062D56400F001C3E4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9N8ZC32DMP;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hexwatch.HexWatchApp-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HexWatchApp Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HexWatchApp Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Debug;
+		};
+		C29902072D56400F001C3E4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9N8ZC32DMP;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hexwatch.HexWatchApp-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HexWatchApp Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HexWatchApp Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Release;
+		};
+		C29902082D56400F001C3E4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9N8ZC32DMP;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hexwatch.HexWatchApp-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "HexWatchApp Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Debug;
+		};
+		C29902092D56400F001C3E4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9N8ZC32DMP;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hexwatch.HexWatchApp-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "HexWatchApp Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -586,6 +952,33 @@
 			buildConfigurations = (
 				C279DB8D2D5639CC00B6B3DC /* Debug */,
 				C279DB8E2D5639CC00B6B3DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C299020A2D56400F001C3E4F /* Build configuration list for PBXNativeTarget "HexWatchApp Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C29902042D56400F001C3E4F /* Debug */,
+				C29902052D56400F001C3E4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C299020B2D56400F001C3E4F /* Build configuration list for PBXNativeTarget "HexWatchApp Watch AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C29902062D56400F001C3E4F /* Debug */,
+				C29902072D56400F001C3E4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C299020C2D56400F001C3E4F /* Build configuration list for PBXNativeTarget "HexWatchApp Watch AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C29902082D56400F001C3E4F /* Debug */,
+				C29902092D56400F001C3E4F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
