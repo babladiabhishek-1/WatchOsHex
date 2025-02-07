@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C29902022D56400F001C3E4F /* HexWatchApp Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = C29901DF2D56400E001C3E4F /* HexWatchApp Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C299020F2D56410F001C3E4F /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = C299020E2D56410F001C3E4F /* Lottie */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,9 +72,22 @@
 		C29901F82D56400F001C3E4F /* HexWatchApp Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HexWatchApp Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		C29902132D564172001C3E4F /* Exceptions for "HEXWatch" folder in "HexWatchApp Watch App" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				P266.swift,
+			);
+			target = C29901DE2D56400E001C3E4F /* HexWatchApp Watch App */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		C279DB612D5639CB00B6B3DC /* HEXWatch */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				C29902132D564172001C3E4F /* Exceptions for "HEXWatch" folder in "HexWatchApp Watch App" target */,
+			);
 			path = HEXWatch;
 			sourceTree = "<group>";
 		};
@@ -109,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C299020F2D56410F001C3E4F /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +213,7 @@
 			);
 			name = HEXWatch;
 			packageProductDependencies = (
+				C299020E2D56410F001C3E4F /* Lottie */,
 			);
 			productName = HEXWatch;
 			productReference = C279DB5F2D5639CB00B6B3DC /* HEXWatch.app */;
@@ -360,6 +376,9 @@
 			);
 			mainGroup = C279DB562D5639CB00B6B3DC;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				C299020D2D56410F001C3E4F /* XCRemoteSwiftPackageReference "lottie-spm" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = C279DB602D5639CB00B6B3DC /* Products */;
 			projectDirPath = "";
@@ -984,6 +1003,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C299020D2D56410F001C3E4F /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C299020E2D56410F001C3E4F /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C299020D2D56410F001C3E4F /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C279DB572D5639CB00B6B3DC /* Project object */;
 }
