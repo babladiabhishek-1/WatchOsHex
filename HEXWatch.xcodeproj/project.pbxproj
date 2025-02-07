@@ -109,6 +109,13 @@
 			);
 			target = C29901DE2D56400E001C3E4F /* HexWatchApp Watch App */;
 		};
+		ED606F522D5663C000F2EF40 /* Exceptions for "HexWatchApp Watch App" folder in "HexWatchApp Watch App" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"HexWatchApp-Watch-App-Info.plist",
+			);
+			target = C29901DE2D56400E001C3E4F /* HexWatchApp Watch App */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -132,6 +139,9 @@
 		};
 		C29901E02D56400E001C3E4F /* HexWatchApp Watch App */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				ED606F522D5663C000F2EF40 /* Exceptions for "HexWatchApp Watch App" folder in "HexWatchApp Watch App" target */,
+			);
 			path = "HexWatchApp Watch App";
 			sourceTree = "<group>";
 		};
@@ -741,6 +751,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Needed to provide animations, connecting the app the an external firebase to do so";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -780,6 +791,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Needed to provide animations, connecting the app the an external firebase to do so";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -901,13 +913,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "HexWatchApp Watch App/HexWatchApp Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HexWatchApp Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = 9N8ZC32DMP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "HexWatchApp-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = HexWatchApp;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Needed to share with firebase to create an animation";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Needed permiss to provide animations, connecting the app the an external firebase to do so";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.hexwatch.HEXWatch;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
@@ -932,13 +948,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "HexWatchApp Watch App/HexWatchApp Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HexWatchApp Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = 9N8ZC32DMP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "HexWatchApp-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = HexWatchApp;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Needed to share with firebase to create an animation";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Needed permiss to provide animations, connecting the app the an external firebase to do so";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.hexwatch.HEXWatch;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
