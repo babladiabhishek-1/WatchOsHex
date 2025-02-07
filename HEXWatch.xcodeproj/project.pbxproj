@@ -33,10 +33,10 @@
 		C274B34C2D564E07005591F8 /* FirebaseVertexAI in Frameworks */ = {isa = PBXBuildFile; productRef = C274B34B2D564E07005591F8 /* FirebaseVertexAI */; };
 		C274B3532D564F1A005591F8 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = C274B3522D564F1A005591F8 /* FirebaseCore */; };
 		C274B3552D564F22005591F8 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = C274B3542D564F22005591F8 /* FirebaseDatabase */; };
-		C274B3572D5654E6005591F8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C274B3562D5654E6005591F8 /* GoogleService-Info.plist */; };
-		C274B3582D5654E6005591F8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C274B3562D5654E6005591F8 /* GoogleService-Info.plist */; };
 		C29902022D56400F001C3E4F /* HexWatchApp Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = C29901DF2D56400E001C3E4F /* HexWatchApp Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C299020F2D56410F001C3E4F /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = C299020E2D56410F001C3E4F /* Lottie */; };
+		ED606F4E2D565F1800F2EF40 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED606F4D2D565F1800F2EF40 /* GoogleService-Info.plist */; };
+		ED606F4F2D565F1800F2EF40 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED606F4D2D565F1800F2EF40 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,13 +92,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		C274B3562D5654E6005591F8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C279DB5F2D5639CB00B6B3DC /* HEXWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HEXWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C279DB722D5639CC00B6B3DC /* HEXWatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HEXWatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C279DB7C2D5639CC00B6B3DC /* HEXWatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HEXWatchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C29901DF2D56400E001C3E4F /* HexWatchApp Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HexWatchApp Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C29901EE2D56400F001C3E4F /* HexWatchApp Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HexWatchApp Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C29901F82D56400F001C3E4F /* HexWatchApp Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HexWatchApp Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED606F4D2D565F1800F2EF40 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -223,7 +223,7 @@
 		C274B34D2D564E99005591F8 /* Google info plist */ = {
 			isa = PBXGroup;
 			children = (
-				C274B3562D5654E6005591F8 /* GoogleService-Info.plist */,
+				ED606F4D2D565F1800F2EF40 /* GoogleService-Info.plist */,
 			);
 			path = "Google info plist";
 			sourceTree = "<group>";
@@ -498,7 +498,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C274B3572D5654E6005591F8 /* GoogleService-Info.plist in Resources */,
+				ED606F4E2D565F1800F2EF40 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,7 +520,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C274B3582D5654E6005591F8 /* GoogleService-Info.plist in Resources */,
+				ED606F4F2D565F1800F2EF40 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
