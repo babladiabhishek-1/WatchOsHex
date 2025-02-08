@@ -14,14 +14,12 @@ struct ContentViewPhone: View {
     @StateObject private var watchSession = WatchSessionManager.shared  // ✅ Observing updates
 
     var body: some View {
-        VStack {
-            HStack {
+        ZStack {
+                P10_CircleTypography()
+            HStack{
                 Text("❤️")
                     .font(.system(size: 50))
-                Spacer()
-            }
             
-            HStack {
                 Text("\(watchSession.receivedHeartRate)") // ✅ Automatically updates via Combine
                     .fontWeight(.regular)
                     .font(.system(size: 70))
@@ -31,9 +29,8 @@ struct ContentViewPhone: View {
                     .fontWeight(.bold)
                     .foregroundColor(Color.red)
                     .padding(.bottom, 28.0)
-                
-                Spacer()
             }
+                
         }
         .padding()
         .onAppear {

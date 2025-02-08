@@ -75,11 +75,22 @@ struct ContentViewWatch: View {
     @StateObject private var heartRateManager = HeartRateManager()  // ✅ Uses Combine for updates
 
     var body: some View {
-        VStack {
-            Text("Heart Rate: \(heartRateManager.heartRate) BPM")
-                .font(.largeTitle)
-                .foregroundColor(.red)
-                .padding()
+        ZStack {
+                P10_CircleTypography()
+            HStack {
+                Text("❤️")
+                    .font(.system(size: 10))
+            
+                Text("\(heartRateManager.heartRate) BPM") // ✅ Automatically updates via Combine
+                    .fontWeight(.regular)
+                    .font(.system(size: 50))
+                
+                Text("BPM")
+                    .font(.headline)
+                    .fontWeight(.bold)
+                    .foregroundColor(Color.red)
+                    .padding(.bottom, 15)
+            }
         }
     }
 }

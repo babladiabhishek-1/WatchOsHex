@@ -101,10 +101,10 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		C29902132D564172001C3E4F /* Exceptions for "HEXWatch" folder in "HexWatchApp Watch App" target */ = {
+		C2DA9D502D576D150015E523 /* Exceptions for "HEXWatch" folder in "HexWatchApp Watch App" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				P266.swift,
+				P10.swift,
 			);
 			target = C29901DE2D56400E001C3E4F /* HexWatchApp Watch App */;
 		};
@@ -114,7 +114,7 @@
 		C279DB612D5639CB00B6B3DC /* HEXWatch */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				C29902132D564172001C3E4F /* Exceptions for "HEXWatch" folder in "HexWatchApp Watch App" target */,
+				C2DA9D502D576D150015E523 /* Exceptions for "HEXWatch" folder in "HexWatchApp Watch App" target */,
 			);
 			path = HEXWatch;
 			sourceTree = "<group>";
