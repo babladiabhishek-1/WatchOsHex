@@ -7,14 +7,28 @@
 
 import SwiftUI
 import FirebaseCore
+//@main
+//struct HexWatchApp_Watch_AppApp: App {
+//    init() {
+//           FirebaseApp.configure()
+//        }
+//    var body: some Scene {
+//        WindowGroup {
+//            ContentView()
+//        }
+//    }
+//}
+
 @main
-struct HexWatchApp_Watch_AppApp: App {
-    init() {
-           FirebaseApp.configure()
-        }
+struct WatchApp: App {
+    @StateObject private var watchSessionManager = WatchSessionManager()
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .onAppear {
+                    watchSessionManager.activateSession()
+                }
         }
     }
 }

@@ -1,50 +1,22 @@
 import SwiftUI
 import HealthKit
-import FirebaseDatabase
+import WatchConnectivity
 
-struct ContentView: View {
+class HeartRateManager: NSObject, ObservableObject {
     private var healthStore = HKHealthStore()
-    let ref = Database.database().reference()
-    let heartRateQuantity = HKUnit(from: "count/min")
-    
-    @State private var value = 0
-    
-    var body: some View {
-        VStack {
-            HStack {
-                Text("❤️")
-                    .font(.system(size: 50))
-                Spacer()
-            }
-            
-            HStack {
-                Text("\(value)")
-                    .fontWeight(.regular)
-                    .font(.system(size: 70))
-                
-                Text("BPM")
-                    .font(.headline)
-                    .fontWeight(.bold)
-                    .foregroundColor(Color.red)
-                    .padding(.bottom, 28.0)
-                
-                Spacer()
-            }
-        }
-        .padding()
-        .onAppear(perform: start)
-    }
-    
-    func start() {
+    private let heartRateUnit = HKUnit(from: "count/min")
+    @Published var heartRate: Int = 0
+
+    override init() {
+        super.init()
         authorizeHealthKit()
     }
 
     func authorizeHealthKit() {
-        let healthKitTypes: Set = [
-            HKObjectType.quantityType(forIdentifier: .heartRate)!
-        ]
-        
-        healthStore.requestAuthorization(toShare: nil, read: healthKitTypes) { success, error in
+        let heartRateType = HKObjectType.quantityType(forIdentifier: .heartRate)!
+        let typesToRead: Set = [heartRateType]
+
+        healthStore.requestAuthorization(toShare: nil, read: typesToRead) { success, error in
             if success {
                 print("✅ HealthKit Authorization Granted")
                 self.startHeartRateMonitoring()
@@ -53,59 +25,88 @@ struct ContentView: View {
             }
         }
     }
-    
-    private func startHeartRateMonitoring() {
+
+    func startHeartRateMonitoring() {
         guard let heartRateType = HKObjectType.quantityType(forIdentifier: .heartRate) else { return }
 
-        let observerQuery = HKObserverQuery(sampleType: heartRateType, predicate: nil) { _, _, error in
-            if let error = error {
-                print("❌ Observer Query Error: \(error.localizedDescription)")
-                return
-            }
-            self.startAnchoredQuery(for: .heartRate)
+        let query = HKAnchoredObjectQuery(type: heartRateType, predicate: nil, anchor: nil, limit: HKObjectQueryNoLimit) { _, samples, _, _, _ in
+            guard let samples = samples as? [HKQuantitySample] else { return }
+            self.processHeartRate(samples)
         }
         
-        healthStore.execute(observerQuery)
-        startAnchoredQuery(for: .heartRate) // Start initial query
-    }
-    
-    private func startAnchoredQuery(for quantityTypeIdentifier: HKQuantityTypeIdentifier) {
-        guard let quantityType = HKObjectType.quantityType(forIdentifier: quantityTypeIdentifier) else { return }
-
-        let updateHandler: (HKAnchoredObjectQuery, [HKSample]?, [HKDeletedObject]?, HKQueryAnchor?, Error?) -> Void = { query, samples, deletedObjects, queryAnchor, error in
+        query.updateHandler = { _, samples, _, _, _ in
             guard let samples = samples as? [HKQuantitySample] else { return }
-            self.process(samples, type: quantityTypeIdentifier)
+            self.processHeartRate(samples)
         }
-
-        let query = HKAnchoredObjectQuery(type: quantityType, predicate: nil, anchor: nil, limit: HKObjectQueryNoLimit, resultsHandler: updateHandler)
-        query.updateHandler = updateHandler
-
+        
         healthStore.execute(query)
     }
 
-    private func process(_ samples: [HKQuantitySample], type: HKQuantityTypeIdentifier) {
-        var lastHeartRate = 0.0
-        
-        for sample in samples {
-            if type == .heartRate {
-                lastHeartRate = sample.quantity.doubleValue(for: heartRateQuantity)
-            }
-        }
+    private func processHeartRate(_ samples: [HKQuantitySample]) {
+        guard let lastSample = samples.last else { return }
+        let bpm = Int(lastSample.quantity.doubleValue(for: heartRateUnit))
         
         DispatchQueue.main.async {
-            self.value = Int(lastHeartRate)  // ✅ Ensure UI update happens on the main thread
+            self.heartRate = bpm
         }
         
-        ref.child("BPM").setValue(lastHeartRate) { (error, _) in
-            if let error = error {
-                print("❌ Firebase Write Error: \(error.localizedDescription)")
-            } else {
-                print("✅ BPM value successfully written to Firebase: \(lastHeartRate)")
-            }
+        sendHeartRateToiPhone(bpm)
+    }
+
+    private func sendHeartRateToiPhone(_ bpm: Int) {
+        if WCSession.default.isReachable {
+            WCSession.default.sendMessage(["heartRate": bpm], replyHandler: nil, errorHandler: nil)
+            print("📡 Sent heart rate: \(bpm) BPM to iPhone")
         }
     }
 }
 
+struct ContentView: View {
+    @ObservedObject var heartRateManager = HeartRateManager()
+
+    var body: some View {
+        VStack {
+            Text("Heart Rate: \(heartRateManager.heartRate) BPM")
+                .font(.largeTitle)
+                .foregroundColor(.red)
+                .padding()
+        }
+    }
+}
+
+
+
+class WatchSessionManager: NSObject, WCSessionDelegate, ObservableObject {
+    static let shared = WatchSessionManager()
+
+     override init() {
+        super.init()
+
+        if WCSession.isSupported() {
+            WCSession.default.delegate = self
+            WCSession.default.activate()
+        }
+    }
+
+    func activateSession() {
+        if WCSession.isSupported() {
+            let session = WCSession.default
+            session.delegate = self
+            session.activate()
+        }
+    }
+
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {}
+
+    func session(_ session: WCSession, didReceiveMessage message: [String: Any]) {}
+
+    #if os(iOS)
+    func sessionDidBecomeInactive(_ session: WCSession) {}
+    func sessionDidDeactivate(_ session: WCSession) {
+        WCSession.default.activate()
+    }
+    #endif
+}
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()

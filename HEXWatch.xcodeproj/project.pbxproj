@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C210B2BE2D568A1F00D32EC1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C210B2BD2D568A1F00D32EC1 /* GoogleService-Info.plist */; };
-		C210B2BF2D568A1F00D32EC1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C210B2BD2D568A1F00D32EC1 /* GoogleService-Info.plist */; };
 		C274B31E2D564E06005591F8 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = C274B31D2D564E06005591F8 /* FirebaseAnalytics */; };
 		C274B3202D564E06005591F8 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = C274B31F2D564E06005591F8 /* FirebaseAnalyticsOnDeviceConversion */; };
 		C274B3222D564E06005591F8 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = C274B3212D564E06005591F8 /* FirebaseAnalyticsWithoutAdIdSupport */; };
@@ -37,6 +35,7 @@
 		C274B3552D564F22005591F8 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = C274B3542D564F22005591F8 /* FirebaseDatabase */; };
 		C29902022D56400F001C3E4F /* HexWatchApp Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = C29901DF2D56400E001C3E4F /* HexWatchApp Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C299020F2D56410F001C3E4F /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = C299020E2D56410F001C3E4F /* Lottie */; };
+		C2DA9D492D569F070015E523 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C2DA9D482D569F070015E523 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,13 +91,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		C210B2BD2D568A1F00D32EC1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C279DB5F2D5639CB00B6B3DC /* HEXWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HEXWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C279DB722D5639CC00B6B3DC /* HEXWatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HEXWatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C279DB7C2D5639CC00B6B3DC /* HEXWatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HEXWatchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C29901DF2D56400E001C3E4F /* HexWatchApp Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HexWatchApp Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C29901EE2D56400F001C3E4F /* HexWatchApp Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HexWatchApp Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C29901F82D56400F001C3E4F /* HexWatchApp Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HexWatchApp Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2DA9D482D569F070015E523 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -223,7 +222,7 @@
 		C274B34D2D564E99005591F8 /* Google info plist */ = {
 			isa = PBXGroup;
 			children = (
-				C210B2BD2D568A1F00D32EC1 /* GoogleService-Info.plist */,
+				C2DA9D482D569F070015E523 /* GoogleService-Info.plist */,
 			);
 			path = "Google info plist";
 			sourceTree = "<group>";
@@ -498,7 +497,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C210B2BE2D568A1F00D32EC1 /* GoogleService-Info.plist in Resources */,
+				C2DA9D492D569F070015E523 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,7 +519,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C210B2BF2D568A1F00D32EC1 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

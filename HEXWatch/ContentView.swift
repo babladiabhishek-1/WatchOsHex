@@ -6,61 +6,94 @@
 //
 
 import SwiftUI
-import SwiftData
+import WatchConnectivity
+import FirebaseDatabase
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+    @StateObject private var watchSession = WatchSessionManager.shared  // 🔥 Observe the shared session
 
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-                    }
-                }
-                .onDelete(perform: deleteItems)
+        VStack {
+            HStack {
+                Text("❤️")
+                    .font(.system(size: 50))
+                Spacer()
             }
-#if os(macOS)
-            .navigationSplitViewColumnWidth(min: 180, ideal: 200)
-#endif
-            .toolbar {
-#if os(iOS)
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-#endif
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
+            
+            HStack {
+                Text("\(watchSession.receivedHeartRate)") // ✅ Dynamically updates UI
+                    .fontWeight(.regular)
+                    .font(.system(size: 70))
+                
+                Text("BPM")
+                    .font(.headline)
+                    .fontWeight(.bold)
+                    .foregroundColor(Color.red)
+                    .padding(.bottom, 28.0)
+                
+                Spacer()
             }
-        } detail: {
-            Text("Select an item")
         }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
-            }
+        .padding()
+        .onAppear {
+            watchSession.activateSession()
         }
     }
 }
 
+class WatchSessionManager: NSObject, WCSessionDelegate, ObservableObject {
+    static let shared = WatchSessionManager()
+    
+    @Published var receivedHeartRate: Int = 0  // ✅ Now linked to UI
+
+    private override init() {
+        super.init()
+        
+        if WCSession.isSupported() {
+            let session = WCSession.default
+            session.delegate = self
+            session.activate()
+        }
+    }
+    
+    func activateSession() {
+        if WCSession.isSupported() {
+            let session = WCSession.default
+            session.delegate = self
+            session.activate()
+        }
+    }
+    
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: (any Error)?) {
+        print("📡 WCSession activated with state: \(activationState.rawValue)")
+    }
+    
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        print("📡 WCSession inactive")
+    }
+    
+    func sessionDidDeactivate(_ session: WCSession) {
+        WCSession.default.activate()  // 🔄 Reactivate session if deactivated
+    }
+    
+    func session(_ session: WCSession, didReceiveMessage message: [String: Any]) {
+        if let bpm = message["heartRate"] as? Int {
+            DispatchQueue.main.async {
+                self.receivedHeartRate = bpm  // ✅ Triggers UI update
+            }
+            
+            // Save to Firebase
+            let ref = Database.database().reference()
+            ref.child("BPM").setValue(bpm) { (error, _) in
+                if let error = error {
+                    print("❌ Firebase Write Error: \(error.localizedDescription)")
+                } else {
+                    print("✅ BPM value successfully written to Firebase: \(bpm)")
+                }
+            }
+        }
+    }
+}
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
 }
