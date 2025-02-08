@@ -1,15 +1,27 @@
+
 import SwiftUI
 import HealthKit
 import WatchConnectivity
+import Combine
 
 class HeartRateManager: NSObject, ObservableObject {
     private var healthStore = HKHealthStore()
     private let heartRateUnit = HKUnit(from: "count/min")
-    @Published var heartRate: Int = 0
+
+    @Published var heartRate: Int = 0  // ✅ Automatically updates UI
+    private var cancellables = Set<AnyCancellable>()  // ✅ Store Combine subscriptions
 
     override init() {
         super.init()
         authorizeHealthKit()
+        
+        // 🔄 Automatically send heart rate updates to iPhone
+        $heartRate
+            .removeDuplicates()  // ✅ Avoid redundant sends
+            .sink { bpm in
+                self.sendHeartRateToiPhone(bpm)
+            }
+            .store(in: &cancellables)
     }
 
     func authorizeHealthKit() {
@@ -47,10 +59,8 @@ class HeartRateManager: NSObject, ObservableObject {
         let bpm = Int(lastSample.quantity.doubleValue(for: heartRateUnit))
         
         DispatchQueue.main.async {
-            self.heartRate = bpm
+            self.heartRate = bpm  // ✅ UI automatically updates
         }
-        
-        sendHeartRateToiPhone(bpm)
     }
 
     private func sendHeartRateToiPhone(_ bpm: Int) {
@@ -61,8 +71,8 @@ class HeartRateManager: NSObject, ObservableObject {
     }
 }
 
-struct ContentView: View {
-    @ObservedObject var heartRateManager = HeartRateManager()
+struct ContentViewWatch: View {
+    @StateObject private var heartRateManager = HeartRateManager()  // ✅ Uses Combine for updates
 
     var body: some View {
         VStack {
@@ -73,6 +83,7 @@ struct ContentView: View {
         }
     }
 }
+
 
 
 
@@ -109,6 +120,6 @@ class WatchSessionManager: NSObject, WCSessionDelegate, ObservableObject {
 }
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentViewWatch()
     }
 }

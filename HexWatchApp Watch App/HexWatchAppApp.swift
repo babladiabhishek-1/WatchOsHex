@@ -25,7 +25,7 @@ struct WatchApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentViewWatch()
                 .onAppear {
                     watchSessionManager.activateSession()
                 }

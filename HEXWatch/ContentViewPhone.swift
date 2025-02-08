@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
+import Combine
 import WatchConnectivity
 import FirebaseDatabase
 
-struct ContentView: View {
-    @StateObject private var watchSession = WatchSessionManager.shared  // 🔥 Observe the shared session
+struct ContentViewPhone: View {
+    @StateObject private var watchSession = WatchSessionManager.shared  // ✅ Observing updates
 
     var body: some View {
         VStack {
@@ -21,7 +22,7 @@ struct ContentView: View {
             }
             
             HStack {
-                Text("\(watchSession.receivedHeartRate)") // ✅ Dynamically updates UI
+                Text("\(watchSession.receivedHeartRate)") // ✅ Automatically updates via Combine
                     .fontWeight(.regular)
                     .font(.system(size: 70))
                 
@@ -44,7 +45,10 @@ struct ContentView: View {
 class WatchSessionManager: NSObject, WCSessionDelegate, ObservableObject {
     static let shared = WatchSessionManager()
     
-    @Published var receivedHeartRate: Int = 0  // ✅ Now linked to UI
+    @Published var receivedHeartRate: Int = 0  // ✅ Automatically updates UI
+
+    private var cancellables = Set<AnyCancellable>()  // ✅ Store Combine subscriptions
+    private let ref = Database.database().reference()  // ✅ Firebase reference
 
     private override init() {
         super.init()
@@ -54,6 +58,14 @@ class WatchSessionManager: NSObject, WCSessionDelegate, ObservableObject {
             session.delegate = self
             session.activate()
         }
+
+        // 🔄 Automatically update Firebase when heart rate changes
+        $receivedHeartRate
+            .removeDuplicates()  // ✅ Only update if value actually changes
+            .sink { bpm in
+                self.updateFirebase(bpm: bpm)
+            }
+            .store(in: &cancellables)
     }
     
     func activateSession() {
@@ -73,27 +85,27 @@ class WatchSessionManager: NSObject, WCSessionDelegate, ObservableObject {
     }
     
     func sessionDidDeactivate(_ session: WCSession) {
-        WCSession.default.activate()  // 🔄 Reactivate session if deactivated
+        WCSession.default.activate()  // 🔄 Reactivate session if needed
     }
     
     func session(_ session: WCSession, didReceiveMessage message: [String: Any]) {
         if let bpm = message["heartRate"] as? Int {
             DispatchQueue.main.async {
-                self.receivedHeartRate = bpm  // ✅ Triggers UI update
+                self.receivedHeartRate = bpm  // ✅ Triggers UI update & Firebase update
             }
-            
-            // Save to Firebase
-            let ref = Database.database().reference()
-            ref.child("BPM").setValue(bpm) { (error, _) in
-                if let error = error {
-                    print("❌ Firebase Write Error: \(error.localizedDescription)")
-                } else {
-                    print("✅ BPM value successfully written to Firebase: \(bpm)")
-                }
+        }
+    }
+    
+    private func updateFirebase(bpm: Int) {
+        ref.child("BPM").setValue(bpm) { (error, _) in
+            if let error = error {
+                print("❌ Firebase Write Error: \(error.localizedDescription)")
+            } else {
+                print("✅ BPM successfully written to Firebase: \(bpm)")
             }
         }
     }
 }
 #Preview {
-    ContentView()
+    ContentViewPhone()
 }

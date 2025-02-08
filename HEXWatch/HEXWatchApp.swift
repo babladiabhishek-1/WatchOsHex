@@ -16,7 +16,7 @@ struct HEXWatchApp: App {
         }
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentViewPhone()
         }
     }
 }
